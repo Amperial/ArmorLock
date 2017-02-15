@@ -1,0 +1,53 @@
+debug: false
+configversion: ${project.version}
+colors:
+  primary: DARK_PURPLE
+  secondary: GRAY
+  highlights: GOLD
+trainee:
+  helmet:
+    material: "LEATHER_HELMET"
+  chestplate:
+    material: "LEATHER_CHESTPLATE"
+  leggings:
+    material: "LEATHER_LEGGINGS"
+  boots:
+    material: "LEATHER_BOOTS"
+guard:
+  helmet:
+    material: "IRON_HELMET"
+    enchantments:
+      DURABILITY: 3
+  chestplate:
+    material: "IRON_CHESTPLATE"
+    enchantments:
+      DURABILITY: 3
+  leggings:
+    material: "IRON_LEGGINGS"
+    enchantments:
+      DURABILITY: 3
+  boots:
+    material: "IRON_BOOTS"
+    enchantments:
+      DURABILITY: 3
+superguard:
+  helmet:
+    material: "DIAMOND_HELMET"
+    enchantments:
+      DURABILITY: 3
+      PROTECTION_ENVIRONMENTAL: 4
+  chestplate:
+    material: "DIAMOND_CHESTPLATE"
+    enchantments:
+      DURABILITY: 3
+      PROTECTION_ENVIRONMENTAL: 4
+  leggings:
+    material: "DIAMOND_LEGGINGS"
+    enchantments:
+      DURABILITY: 3
+      PROTECTION_ENVIRONMENTAL: 4
+  boots:
+    material: "DIAMOND_BOOTS"
+    enchantments:
+      DURABILITY: 3
+      PROTECTION_ENVIRONMENTAL: 4

@@ -1,0 +1,8 @@
+name: ArmorLock
+version: ${project.version}
+description: The Armor locking plugin for Bukkit.
+author: ampayne2
+main: ninja.amp.armorlock.ArmorLock
+commands:
+  armorlock:
+    aliases: [alock, al]

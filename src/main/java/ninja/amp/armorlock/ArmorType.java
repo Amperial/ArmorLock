@@ -1,0 +1,94 @@
+/*
+ * This file is part of ArmorLock.
+ *
+ * Copyright (c) 2013-2017 <http://github.com/ampayne2/ArmorLock//>
+ *
+ * ArmorLock is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU Lesser General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * ArmorLock is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU Lesser General Public License for more details.
+ *
+ * You should have received a copy of the GNU Lesser General Public License
+ * along with ArmorLock.  If not, see <http://www.gnu.org/licenses/>.
+ */
+package ninja.amp.armorlock;
+
+import org.bukkit.Material;
+import org.bukkit.entity.Player;
+import org.bukkit.inventory.ItemStack;
+
+/**
+ * Types of armor.
+ */
+public enum ArmorType {
+    HELMET,
+    CHESTPLATE,
+    LEGGINGS,
+    BOOTS;
+
+    /**
+     * Checks if the slot of the ArmorType is empty.
+     *
+     * @param player The player.
+     * @return True if the slot is empty, else false.
+     */
+    public boolean canEquip(Player player) {
+        switch (this) {
+            case HELMET:
+                return player.getInventory().getHelmet() == null;
+            case CHESTPLATE:
+                return player.getInventory().getChestplate() == null;
+            case LEGGINGS:
+                return player.getInventory().getLeggings() == null;
+            case BOOTS:
+                return player.getInventory().getBoots() == null;
+            default:
+                return false;
+        }
+    }
+
+    /**
+     * @param material The ArmorMaterial of the armor.
+     *
+     * @return The armor itemstack.
+     */
+    public ItemStack getArmor(ArmorMaterial material) {
+        return new ItemStack(Material.valueOf(material.name() + "_" + name()));
+    }
+
+    /**
+     * Checks if a material is a piece of armor.
+     *
+     * @param material The material.
+     * @return True if the material is a piece of armor, else false.
+     */
+    public static boolean isArmor(Material material) {
+        for (ArmorType armorType : ArmorType.values()) {
+            if (material.name().contains(armorType.name())) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    /**
+     * Gets the ArmorType of a piece of armor.
+     *
+     * @param material The piece of armor.
+     * @return The ArmorType.
+     */
+    public static ArmorType getArmorType(Material material) {
+        for (ArmorType armorType : ArmorType.values()) {
+            if (material.name().contains(armorType.name())) {
+                return armorType;
+            }
+        }
+        return null;
+    }
+
+}
