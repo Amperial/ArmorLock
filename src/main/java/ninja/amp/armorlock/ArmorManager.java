@@ -40,10 +40,10 @@ import java.util.Iterator;
 public class ArmorManager implements Listener {
 
     private static final Permission MODIFY = new Permission("armorlock.modify", PermissionDefault.OP);
-    private static final Permission NO_DROP = new Permission("armorlock.dropnothing", PermissionDefault.TRUE);
-    private static final Permission TRAINEE = new Permission("armorlock.trainee", PermissionDefault.TRUE);
-    private static final Permission GUARD = new Permission("armorlock.guard", PermissionDefault.OP);
-    private static final Permission SUPER_GUARD = new Permission("armorlock.superguard", PermissionDefault.OP);
+    private static final Permission NO_DROP = new Permission("armorlock.dropnothing", PermissionDefault.FALSE);
+    private static final Permission TRAINEE = new Permission("armorlock.trainee", PermissionDefault.FALSE);
+    private static final Permission GUARD = new Permission("armorlock.guard", PermissionDefault.FALSE);
+    private static final Permission SUPER_GUARD = new Permission("armorlock.superguard", PermissionDefault.FALSE);
 
     private final ArmorLock plugin;
     private final ArmorSet trainee;
