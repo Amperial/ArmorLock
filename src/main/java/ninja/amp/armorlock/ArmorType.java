@@ -20,7 +20,6 @@ package ninja.amp.armorlock;
 
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
-import org.bukkit.inventory.ItemStack;
 
 /**
  * Types of armor.
@@ -50,15 +49,6 @@ public enum ArmorType {
             default:
                 return false;
         }
-    }
-
-    /**
-     * @param material The ArmorMaterial of the armor.
-     *
-     * @return The armor itemstack.
-     */
-    public ItemStack getArmor(ArmorMaterial material) {
-        return new ItemStack(Material.valueOf(material.name() + "_" + name()));
     }
 
     /**
